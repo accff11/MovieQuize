@@ -4,15 +4,26 @@ final class MovieQuizViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         let currentQuestion = questions[currentQuestionIndex]
         let viewModel = convert(model: currentQuestion)
         show(quiz: viewModel)
+        
+    }
+    private func setupUI() {
+        textLabel.font = UIFont(name: "YSDisplay-Bold", size: 23)
+        counterLabel.font = UIFont(name: "YSDisplay-Medium", size: 20)
+        textViewQuestion.font = UIFont (name: "YSDisplay-Medium", size: 20)
+        yesButton.titleLabel?.font = UIFont (name: "YSDisplay-Medium", size: 20)
+        noButton.titleLabel?.font = UIFont (name: "YSDisplay-Medium", size: 20)
     }
     struct QuizQuestion {
         let image: String
         let text: String
         let correctAnswer: Bool
     }
+    
+   
     private let questions: [QuizQuestion] = [
         QuizQuestion(image: "The Godfather",
                      text: "Рейтинг этого фильма больше чем 6?",
@@ -51,6 +62,10 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
     @IBOutlet private var counterLabel: UILabel!
+    @IBOutlet private var textViewQuestion: UILabel!
+    @IBOutlet private var yesButton: UIButton!
+    @IBOutlet private var noButton: UIButton!
+    
     
     struct QuizStepViewModel {
         let image: UIImage
@@ -101,6 +116,7 @@ final class MovieQuizViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.showNextQuestionResults()
+            self.imageView.layer.borderColor = UIColor.clear.cgColor
         }
         
     }

@@ -58,6 +58,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CuM-Ft-DaO" secondAttribute="height" multiplier="2: 3" id="3VV-SE-Bo8"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ7-OB-zbj" userLabel="Question Label">
                                         <rect key="frame" x="42" y="624.5" width="290" height="99.5"/>
@@ -160,7 +165,10 @@
                     <connections>
                         <outlet property="counterLabel" destination="G3M-yo-WQy" id="tdX-E1-arc"/>
                         <outlet property="imageView" destination="CuM-Ft-DaO" id="CDu-7J-Yds"/>
+                        <outlet property="noButton" destination="y6U-7u-83b" id="jHv-Ka-bzq"/>
                         <outlet property="textLabel" destination="qZ7-OB-zbj" id="cMW-JM-4fn"/>
+                        <outlet property="textViewQuestion" destination="lL7-Vv-b8o" id="JFH-my-LdZ"/>
+                        <outlet property="yesButton" destination="jXA-0i-TBb" id="xHu-FS-Zvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
